@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Classification</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        textarea {
+            width: 400px;
+            max-width: 95%;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h3 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Text Classification Using Naive Bayes</h2>
+
+    <form method="POST">
+        <textarea
+            name="news_text"
+            rows="5"
+            placeholder="Enter your text here..."
+            required>{{ input_text }}</textarea>
+
+        <br><br>
+
+        <button type="submit">Predict Category</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted Category: {{ prediction }}</h3>
+    {% endif %}
+
+</body>
+</html>
